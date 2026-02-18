@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import Vehicle.*;
 
 /*
 * This class represents the Controller part in the MVC pattern.
@@ -10,6 +12,9 @@ import java.awt.event.ActionListener;
 
 public class CarController {
     // member fields:
+    Volvo240 volvo ;
+    Scania scania ;
+    Saab95 saab ;
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final int delay = 50;
@@ -20,15 +25,23 @@ public class CarController {
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
     // A list of cars, modify if needed
-    // ArrayList<ACar> cars = new ArrayList<>();
+    ArrayList<Vehicle> cars;
 
     //methods:
+
+    public CarController() {
+        volvo = new Volvo240();
+        scania = new Scania();
+        saab = new Saab95();
+        cars = new ArrayList<>();
+        cars.add(volvo);
+        cars.add(scania);
+        cars.add(saab);
+    }
 
     public static void main(String[] args) {
         // Instance of this class
         CarController cc = new CarController();
-
-        // cc.cars.add(new Volvo240());
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
@@ -42,23 +55,56 @@ public class CarController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
- /*           for (ACar car : cars) {
+            for (int i = 0; i < cars.size(); i++) {
+                Vehicle car = cars.get(i);
+                if ((Truck) car.ramp.currentTilt != 0) break;
                 car.move();
-                int x = (int) Math.round(car.getPosition().getX());
-                int y = (int) Math.round(car.getPosition().getY());
-                frame.drawPanel.moveit(x, y);
+
+                //set carPoint to car's current coordinates
+                int x = (int) Math.round(car.getX());
+                int y = (int) Math.round(car.getY());
+
+                //car should bounce off the walls, turning 180 degrees
+                if (x+100 >= 800 || x < 0 || y+100 >= 800 || y < 0) {
+                    car.turnLeft();
+                    car.turnLeft();
+                }
+
+                frame.drawPanel.moveit(i, x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
-            }*/
+            }
         }
     }
 
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
-       /* for (ACar car : cars
-                ) {
+        for (Vehicle car : cars) {
             car.gas(gas);
-        }*/
+        }
+    }
+
+    void brake(int amount) {
+        double brake = ((double) amount) / 100;
+        for (Vehicle car : cars) {
+            car.brake(brake);
+        }
+    }
+
+    void lowerRamp() {
+        scania.lowerRamp();
+    }
+
+    void raiseRamp() {
+        scania.raiseRamp();
+    }
+
+    void turboOn() {
+        saab.setTurboOn();
+    }
+
+    void turboOff() {
+        saab.setTurboOff();
     }
 }

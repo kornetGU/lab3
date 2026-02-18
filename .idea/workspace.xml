@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" name="Changes" comment="" />
+    <list default="true" id="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lab3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+    </list>
+    <list id="f5148119-ad36-4a4f-b05c-e86fe762bf7a" name="Changes by uni" comment="">
+      <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,13 +26,54 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/CarView.java">
+      <ranges>
+        <range start1="22" end1="23" start2="22" end2="23" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="44" end1="44" start2="44" end2="45" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="57" end1="59" start2="58" end2="58" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="109" end1="109" start2="108" end2="159" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/CarController.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="5" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="12" end1="12" start2="14" end2="17" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="22" end1="23" start2="27" end2="28" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="26" end1="26" start2="31" end2="41" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="30" end1="32" start2="45" end2="45" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="44" end1="45" start2="57" end2="59" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="46" end1="49" start2="60" end2="72" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="51" end1="52" start2="74" end2="75" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="58" end1="60" start2="81" end2="82" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="61" end1="62" start2="83" end2="84" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="63" end1="63" start2="85" end2="108" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/DrawPanel.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="2" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="3" end1="3" start2="5" end2="7" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="9" end1="9" start2="13" end2="14" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="11" end1="12" start2="16" end2="18" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="13" end1="14" start2="19" end2="20" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="17" end1="17" start2="23" end2="27" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="19" end1="22" start2="29" end2="32" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="25" end1="26" start2="35" end2="36" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+        <range start1="29" end1="29" start2="39" end2="41" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="37" end1="38" start2="49" end2="62" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="39" end1="39" start2="63" end2="64" changelist="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" />
+        <range start1="51" end1="52" start2="76" end2="83" changelist="f5148119-ad36-4a4f-b05c-e86fe762bf7a" />
+      </ranges>
+    </file>
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="39ZzI1kmJ5SllV0FuuyLy0g9Ry5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,21 +81,25 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CarController.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/filip/Documents/Objektorienterad/Laborationer/lab3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -61,6 +119,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770918301251</updated>
       <workItem from="1770918302438" duration="627000" />
+      <workItem from="1771411865727" duration="15342000" />
     </task>
     <servers />
   </component>

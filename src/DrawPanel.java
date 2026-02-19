@@ -20,11 +20,9 @@ public class DrawPanel extends JPanel{
     List<Point> carPoints = new ArrayList<>();
 
     BufferedImage volvoWorkshopImage;
-    Point volvoWorkshopPoint = new Point(300,300);
+    static final Point volvoWorkshopPoint = new Point(300,300);
 
-    int imageWidth = 100;
     int imageHeight = 60;
-    int spaceBetween = 100;
 
     // TODO: Make this general for all cars
     void moveit(int i, int x, int y){
@@ -51,9 +49,9 @@ public class DrawPanel extends JPanel{
             BufferedImage saabImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg"));
             BufferedImage scaniaImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg"));
 
-            carImages.add(volvoImage);
-            carImages.add(saabImage);
             carImages.add(scaniaImage);
+            carImages.add(saabImage);
+            carImages.add(volvoImage);
 
             for (int i = 0; i < carImages.size(); i++) {
                 cc.cars.get(i).setY(i*(imageHeight+100));
@@ -68,6 +66,8 @@ public class DrawPanel extends JPanel{
         }
 
     }
+
+
 
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.

@@ -15,6 +15,7 @@ public class CarController {
     Volvo240 volvo ;
     Scania scania ;
     Saab95 saab ;
+    Workshop<Volvo240> workshop;
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final int delay = 50;
@@ -34,14 +35,18 @@ public class CarController {
         scania = new Scania();
         saab = new Saab95();
         cars = new ArrayList<>();
-        cars.add(volvo);
+
+        workshop = new Workshop<Volvo240>(1,"VolvoWorkshop");
+
         cars.add(scania);
         cars.add(saab);
+        cars.add(volvo);
     }
 
     public static void main(String[] args) {
         // Instance of this class
         CarController cc = new CarController();
+
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
@@ -57,8 +62,16 @@ public class CarController {
         public void actionPerformed(ActionEvent e) {
             for (int i = 0; i < cars.size(); i++) {
                 Vehicle car = cars.get(i);
-                if ((Truck) car.ramp.currentTilt != 0) break;
+
+                // om bilen är en scania och rampen är lyft, ska den inte kunna köra
+                 if (car instanceof Scania) {
+                    Scania scan = (Scania) car;
+                    if (scan.stepRamp.getCurrentTilt() != 0) continue;
+                }
+
                 car.move();
+
+
 
                 //set carPoint to car's current coordinates
                 int x = (int) Math.round(car.getX());
@@ -69,6 +82,18 @@ public class CarController {
                     car.turnLeft();
                     car.turnLeft();
                 }
+
+                //load volvo
+                if (car instanceof Volvo240) {
+                    if (car.x >= 300) {
+                        car.stopEngine();
+                        car.brake(1);
+                        workshop.addCar((Volvo240) car);
+                        cars.remove(car);
+                    }
+                }
+                
+                
 
                 frame.drawPanel.moveit(i, x, y);
                 // repaint() calls the paintComponent method of the panel

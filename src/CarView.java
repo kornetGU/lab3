@@ -1,3 +1,5 @@
+import Vehicle.Vehicle;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -153,7 +155,11 @@ public class CarView extends JFrame{
         stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.brake(1000000);
+                for (Vehicle car : carC.cars) {
+                    car.stopEngine();
+                    car.brake(1);
+                }
+
             }
         });
 

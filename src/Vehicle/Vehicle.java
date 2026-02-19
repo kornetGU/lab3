@@ -92,7 +92,7 @@ public abstract class Vehicle implements Movable {
     /**
      * Stops the engine by setting currentSpeed to 0.
      */
-    void stopEngine(){
+    public void stopEngine(){
         currentSpeed = 0;
     }
 

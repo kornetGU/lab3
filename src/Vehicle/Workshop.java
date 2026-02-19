@@ -1,7 +1,7 @@
 package Vehicle;
 import java.util.ArrayList;
 
-class Workshop<X extends Vehicle> {      // Ensure type parameter X must be Vehicle
+public class Workshop<X extends Vehicle> {      // Ensure type parameter X must be Vehicle
     private int maxCapacity;
     private String name;
     private ArrayList<X> currentVehicles;
@@ -25,7 +25,7 @@ class Workshop<X extends Vehicle> {      // Ensure type parameter X must be Vehi
      * Adds car to workshop if there is space for it
      * @param vehicle to add to workshop
      */
-    void addCar(X vehicle){
+    public void addCar(X vehicle){
         if(currentVehicles.size() >= maxCapacity) {
             throw new IllegalArgumentException("No more space");
         }

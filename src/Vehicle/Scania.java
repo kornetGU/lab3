@@ -2,10 +2,10 @@ package Vehicle;
 import java.awt.*;
 
 public class Scania extends Truck {
-    private StepRamp stepRamp;
+    public StepRamp stepRamp;
 
     public Scania() {
-        super(2,  500, Color.gray, "Scania");
+        super(2,  100, Color.gray, "Scania");
         this.stepRamp = new StepRamp(70,5);
         this.ramp = stepRamp;
     }

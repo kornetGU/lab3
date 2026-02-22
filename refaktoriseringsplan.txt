@@ -1,0 +1,52 @@
+Refaktoriseringsplan
+
+Vi ska genomföra förbättringar (refaktorering) som syftar till att förbättra koden ur ett designperspektiv.
+Målet är att öka cohesion samt bättre följa Dependency Inversion Principle, Separation of Concern och Single Responsibility Principle.
+
+För att dela upp ansvaret mellan klasserna inför vi en Model-klass som hanterar instanserna av bilarna samt tillhörande hjälpmetoder.
+Model kommer att kommunicera med CarController, som i sin tur skickar data vidare till CarView för att rendera bilarnas positioner och användargränssnittet.
+TimerListener hanterar fortfarande uppdateringen av programmets state vid varje tick, men använder nu istället instanser och metoder från Model.
+
+CarController fungerar alltså som en brygga mellan Model och View för att separera ansvarsområdena så mycket som möjligt.
+
+För att minska coupling kan vi låta högnivåmodulerna CarController och TimerListener arbeta mot abstraktioner.
+Istället för att arbeta med konkreta instanser implementerar vi en abstrakt klass, CollisionHandler, som hanterar logiken för kollisioner.
+
+Detta gör det enklare att genomföra framtida utökningar och modifieringar, vilket stödjer Open/Closed Principle.
+Vi vill dessutom tydligare fördela ansvaret mellan modulerna för att öka cohesion och arbeta mot SRP.
+
+När det gäller hårdkodade värden kopplade till GUI:t kan vi istället hämta dimensionerna dynamiskt för att förhindra att förändringar i GUI:t påverkar funktionaliteten.
+
+
+Planen:
+
+Steg 1
+
+Identifiera vilka moduler som kommer att påverkas av dessa förändringar. Hur påverkas resten av kodbasen av det vi ändrar?
+
+Steg 2
+
+Skapa en Model-klass som tar över all hantering av bilinstanser från CarController.
+Flytta relevant logik till respektive klass.
+
+Implementera Turbo och WorkShop-interface.
+Detta för att enklare kunna kontrollera om en bil t.ex. "har en turbo".
+
+Steg 3
+
+Implementera getter-metoder i View och Panel för positioner av olika objekt.
+Skapa en CollisionHandler-klass som hanterar kollisioner med hjälp av ovanstående getter-metoder.
+
+Skapa en collideWithWalls()-metod.
+
+Skapa en collideWithWorkshop()-metod.
+
+Byt ut kollisionskontrollerna i TimerListener mot metodanrop till CollisionHandler.
+
+Steg 4
+
+Byt ut hårdkodade värden mot dynamiska metodanrop.
+
+Steg 5
+
+Säkerställ att de nya förändringarna fungerar som förväntat genom tester.

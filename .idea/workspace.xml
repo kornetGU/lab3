@@ -5,36 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1a58d8f-9c10-4faa-87bb-c7c2befe37d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Vehicle/StepRamp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CollisionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarController$TimerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/CarView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/Vehicle/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/Vehicle/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/Vehicle/StepRamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/Vehicle/StepRamp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/Vehicle/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/Vehicle/Truck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/Vehicle/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/Vehicle/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab3/Vehicle/Workshop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab3/Vehicle/Workshop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vehicle/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vehicle/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vehicle/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vehicle/Workshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle/Workshop.java" afterDir="false" />
     </list>
     <list id="6036a1f7-64c4-4a46-9f5d-adb36d6c8bb8" name="Changes by tural.binnatov" comment="" />
-    <list id="f4f91cb9-84cd-4023-a049-d24be7295d66" name="Changes by uni" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -62,30 +38,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CarController.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/filip/Documents/Objektorienterad/Laborationer/lab3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarController.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/filip/Documents/Objektorienterad/Laborationer/lab3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -103,6 +79,8 @@
       <updated>1770918301251</updated>
       <workItem from="1770918302438" duration="627000" />
       <workItem from="1771411865727" duration="26991000" />
+      <workItem from="1771587407177" duration="4820000" />
+      <workItem from="1771597422203" duration="6654000" />
     </task>
     <servers />
   </component>

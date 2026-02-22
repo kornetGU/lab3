@@ -55,53 +55,6 @@ public class CarController {
         cc.timer.start();
     }
 
-    /* Each step the TimerListener moves all the cars in the list and tells the
-    * view to update its images. Change this method to your needs.
-    * */
-    private class TimerListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            for (int i = 0; i < cars.size(); i++) {
-                Vehicle car = cars.get(i);
-
-                // om bilen är en scania och rampen är lyft, ska den inte kunna köra
-                 if (car instanceof Scania) {
-                    Scania scan = (Scania) car;
-                    if (scan.stepRamp.getCurrentTilt() != 0) continue;
-                }
-
-                car.move();
-
-
-
-                //set carPoint to car's current coordinates
-                int x = (int) Math.round(car.getX());
-                int y = (int) Math.round(car.getY());
-
-                //car should bounce off the walls, turning 180 degrees
-                if (x+100 >= 800 || x < 0 || y+100 >= 800 || y < 0) {
-                    car.turnLeft();
-                    car.turnLeft();
-                }
-
-                //load volvo
-                if (car instanceof Volvo240) {
-                    if (car.x >= 300) {
-                        car.stopEngine();
-                        car.brake(1);
-                        workshop.addCar((Volvo240) car);
-                        cars.remove(car);
-                    }
-                }
-                
-                
-
-                frame.drawPanel.moveit(i, x, y);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
-            }
-        }
-    }
-
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
@@ -131,5 +84,50 @@ public class CarController {
 
     void turboOff() {
         saab.setTurboOff();
+    }
+
+    /* Each step the TimerListener moves all the cars in the list and tells the
+     * view to update its images. Change this method to your needs.
+     * */
+    private class TimerListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            for (int i = 0; i < cars.size(); i++) {
+                Vehicle car = cars.get(i);
+
+                // om bilen är en scania och rampen är lyft, ska den inte kunna köra
+                if (car instanceof Scania) {
+                    Scania scan = (Scania) car;
+                    if (scan.stepRamp.getCurrentTilt() != 0) continue;
+                }
+
+                car.move();
+
+                //set carPoint to car's current coordinates
+                int x = (int) Math.round(car.getX());
+                int y = (int) Math.round(car.getY());
+
+                //car should bounce off the walls, turning 180 degrees
+                if (x+100 >= 800 || x < 0 || y+100 >= 800 || y < 0) {
+                    car.turnLeft();
+                    car.turnLeft();
+                }
+
+                //load volvo
+                if (car instanceof Volvo240) {
+                    if (car.x >= 300) {
+                        car.stopEngine();
+                        car.brake(1);
+                        workshop.addCar((Volvo240) car);
+                        cars.remove(car);
+                    }
+                }
+
+
+
+                frame.drawPanel.moveit(i, x, y);
+                // repaint() calls the paintComponent method of the panel
+                frame.drawPanel.repaint();
+            }
+        }
     }
 }

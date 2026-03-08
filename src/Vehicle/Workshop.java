@@ -18,20 +18,13 @@ public class Workshop<X extends Vehicle> {      // Ensure type parameter X must 
      * @param maxCapacity - workshop max capacity
      * @param name - workshop name
      */
-    public Workshop(int maxCapacity, String name, double x, double y,String imagePath, Class<X> vehicleType){
+    public Workshop(int maxCapacity, String name, double x, double y,Class<X> vehicleType){
         this.maxCapacity = maxCapacity;
         this.name = name;
         currentVehicles = new ArrayList<X>();
         this.x = x;
         this.y = y;
         this.vehicleType = vehicleType;
-
-        try {
-            image = ImageIO.read(Workshop.class.getResourceAsStream(imagePath));
-        } catch (IOException ex)
-        {
-            ex.printStackTrace();
-        }
     }
 
 
@@ -63,6 +56,8 @@ public class Workshop<X extends Vehicle> {      // Ensure type parameter X must 
         System.out.println("Returned vehicle: " + returnedVehicle.getModelName());
         return returnedVehicle;
     }
+
+    public String getName() {return this.name;}
 
     public double getX() {
         return this.x;

@@ -1,20 +1,47 @@
 import Vehicle.*;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Model {
 
     // SUBSCRIBERS
     List<ModelObserver> observer = new ArrayList<>();
     public void addObserver(ModelObserver o) {observer.add(o);}
+
     public void notifyObservers() {
         for (ModelObserver o : observer) {
-            o.onUpdate();
+            o.updateCars(carInfo());
         }
     }
-    //////////////
+
+    public void notifyWorkshopListeners() {
+        for (ModelObserver o : observer) {
+            o.updateWorkshops(workshopInfo());
+        }
+    }
+
+    public Map<String, Point> carInfo(){
+        Map<String, Point> carInfo = new HashMap<>();
+        for (Vehicle car : cars) {
+            carInfo.put(car.getId() + "_" + car.getModelName(),
+                    new Point((int)car.getX(), (int)car.getY()));
+        }
+        return carInfo;
+    }
+
+    public Map<String, Point> workshopInfo(){
+        Map<String, Point> workshopInfo = new HashMap<>();
+        for (Workshop workshop : workshops) {
+            workshopInfo.put(workshop.getName() ,new Point((int)workshop.getX(),(int)workshop.getY()));
+        }
+        return workshopInfo;
+    }
+
 
     // CARS
     private List<Vehicle> cars;
@@ -24,7 +51,6 @@ public class Model {
     }
 
     private CarFactory carFactory;
-    //////////////
 
     // WORKSHOPS
     private Workshop<Volvo240> volvoWorkshop;
@@ -34,7 +60,6 @@ public class Model {
     public List<Workshop> getWorkshops(){
         return workshops;
     }
-    //////////////
 
     // OTHER
     private final int delay = 50;
@@ -43,13 +68,12 @@ public class Model {
         carFactory = new CarFactory();
         cars = carFactory.createVehicleOneOfEach();
 
-        volvoWorkshop = new Workshop<Volvo240>(1,"VolvoWorkshop",300,300,"pics/VolvoBrand.jpg", Volvo240.class);
+        volvoWorkshop = new Workshop<Volvo240>(1,"VolvoWorkshop",300,300,Volvo240.class);
         workshops = new ArrayList<>();
         workshops.add(volvoWorkshop);
 
         setY();
     }
-
 
     void lowerRamp() {
         for (Vehicle car : cars) {
@@ -74,7 +98,6 @@ public class Model {
             if (car instanceof Turbo turboCar) turboCar.setTurboOff();
         }
     }
-    //////////////
 
     // MOVEMENT
     public void moveCars(){
@@ -91,7 +114,7 @@ public class Model {
             double newX = car.getX();
             double newY = car.getY();
 
-            moved = newX != oldX || newY != oldY;
+            if (newX != oldX || newY != oldY) moved = true ;
 
         }
         if(moved) notifyObservers();
@@ -116,7 +139,7 @@ public class Model {
         final double space = 100;
         for (Vehicle car : cars) {
             car.setY(yOffset);
-            yOffset += car.getImage().getHeight() + space;
+            yOffset += 160;
         }
     }
 }

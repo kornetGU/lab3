@@ -9,7 +9,7 @@ public class Saab95 extends Car implements Turbo {
      * Constructor to initialize the state of the Saab95.
      */
     public Saab95(){
-        super(2,125,Color.red,"Saab95", "pics/Saab95.jpg");
+        super(2,125,Color.red,"Saab95");
         turboOn = false;
         stopEngine();
     }

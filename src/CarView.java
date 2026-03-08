@@ -34,40 +34,6 @@ public class CarView extends JFrame{
     int gasAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
 
-
-    public void addVehicleDialog(CarController controller) {
-        CarFactory factory = new CarFactory();
-
-        String[] vehicleOptions = factory.getVehicleStrings().toArray(new String[0]);
-
-        JComboBox<String> comboBox = new JComboBox<>(vehicleOptions);
-
-        comboBox.addItem("Random");
-
-        int result = JOptionPane.showConfirmDialog(
-                this,
-                comboBox,
-                "Select a vehicle to add",
-                JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
-        );
-
-        if (result == JOptionPane.OK_OPTION) {
-            String selectedCar = (String) comboBox.getSelectedItem();
-            if (selectedCar != null) {
-                Vehicle newCar = factory.createVehicle(selectedCar);
-
-                newCar.setY(0);
-
-                // directly add to model's list
-                carC.model.getCars().add(newCar);
-
-                // repaint the panel so the new car is visible
-                this.repaint();
-            }
-        }
-    }
-
     JButton addVehicleButton = new JButton("Add Vehicle");
     JButton removeVehicleButton = new JButton("Remove Vehicle");
     JButton gasButton = new JButton("Gas");
@@ -87,7 +53,7 @@ public class CarView extends JFrame{
     // Constructor
     public CarView(String framename, CarController cc){
         this.carC = cc;
-        drawPanel = new DrawPanel(X, Y-240, cc);
+        drawPanel = new DrawPanel(X, Y-240);
         initComponents(framename);
     }
 
@@ -152,4 +118,7 @@ public class CarView extends JFrame{
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+
+
 }

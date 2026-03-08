@@ -5,7 +5,7 @@ public class Scania extends Truck implements Ramp{
     public StepRamp stepRamp;
 
     public Scania() {
-        super(2,  100, Color.gray, "Scania", "pics/Scania.jpg");
+        super(2,  100, Color.gray, "Scania");
         this.stepRamp = new StepRamp(70,5);
         this.ramp = stepRamp;
     }

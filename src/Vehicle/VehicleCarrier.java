@@ -10,7 +10,7 @@ class VehicleCarrier extends Truck {
     private BinaryRamp binaryRamp;
 
     public VehicleCarrier() {
-        super(2,600,Color.black,"Car carrier"," ");
+        super(2,600,Color.black,"Car carrier");
         cargo = new LinkedList<Vehicle>();
         this.binaryRamp = new BinaryRamp();
         this.ramp = binaryRamp;

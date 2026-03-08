@@ -4,8 +4,8 @@ import java.awt.*;
 public abstract class Truck extends Vehicle {
     public Ramp ramp;
 
-    public Truck(int nrDoors, double enginePower, Color color, String modelName, String path){
-        super(nrDoors,enginePower,color,modelName, path);
+    public Truck(int nrDoors, double enginePower, Color color, String modelName){
+        super(nrDoors,enginePower,color,modelName);
     }
 
     /**

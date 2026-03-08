@@ -3,8 +3,8 @@ package Vehicle;
 import java.awt.*;
 
 abstract public class Car extends Vehicle {
-    public Car(int nrDoors, int enginePower,Color color,String modelName,String path){
-        super(nrDoors,enginePower,color,modelName, path);
+    public Car(int nrDoors, int enginePower,Color color,String modelName){
+        super(nrDoors,enginePower,color,modelName);
     }
 
     /**

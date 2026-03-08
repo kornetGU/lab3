@@ -20,7 +20,7 @@ public class CollisionHandler {
 
     //car should bounce off the walls, turning 180 degrees
     private void collideWithWalls(double x , double y , Vehicle car){
-        double imageWidth = car.getImage().getWidth();
+        double imageWidth = controller.drawPanel.getImageWidth(car.getModelName());
         if (x+imageWidth >= CarView.getFrameX() || x < 0 || y+imageWidth >= CarView.getFrameY() || y < 0) {
             car.turnLeft();
             car.turnLeft();
@@ -48,14 +48,13 @@ public class CollisionHandler {
 
                 if (!car.canMove()) continue;
 
-                car.move();
+                controller.model.moveCars();
                 double x = car.getX();
                 double y = car.getY();
 
                 collideWithWalls(x, y, car);
                 collideWithWorkshop(x, y, car);
             }
-            controller.view.drawPanel.repaint();
         }
     }
 }

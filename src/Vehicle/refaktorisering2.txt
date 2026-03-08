@@ -1,2 +1,3 @@
-istället för turbo interface gör vi en tom setTurboOn / off i Vehicle som subklasser får override vid behov
+view ska hantera bilderna, hashmap med modellnamn och bufferedImage, och model skickar endast string i update
 
+se över addcar i carview

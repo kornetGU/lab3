@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.io.File;
 import java.util.List;
 import javax.swing.*;
 import java.awt.*;
@@ -27,11 +28,13 @@ public class CarController extends JFrame {
     int gasAmount = 0;
 
     public CarController() {
-        this.model = new Model();
         this.view = new CarView("CarSim 2.0", this);
         this.drawPanel = view.getDrawPanel();
 
+        this.model = new Model();
         model.addObserver(drawPanel);
+        model.notifyObservers();
+        model.notifyWorkshopListeners();
 
         collisionHandler = new CollisionHandler(this);
         timer = new Timer(delay, collisionHandler.getTimer());
@@ -74,8 +77,9 @@ public class CarController extends JFrame {
         });
 
 
+
         view.addVehicleButton.addActionListener(e -> {
-            view.addVehicleDialog(this);
+            addVehicleDialog(this);
         });
 
         view.removeVehicleButton.addActionListener(e -> {
@@ -83,6 +87,36 @@ public class CarController extends JFrame {
         });
 
         view.gasSpinner.addChangeListener(e -> gasAmount = (int) ((JSpinner)e.getSource()).getValue());
+    }
+
+    public void addVehicleDialog(CarController controller) {
+        CarFactory factory = new CarFactory();
+        String[] vehicleOptions = factory.getVehicleStrings().toArray(new String[0]);
+
+        JComboBox<String> comboBox = new JComboBox<>(vehicleOptions);
+        comboBox.addItem("Random");
+
+        int result = JOptionPane.showConfirmDialog(
+                this,
+                comboBox,
+                "Select a vehicle to add",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (result == JOptionPane.OK_OPTION) {
+            if (!(controller.getCars().size() >= 10)) {
+                String selectedCar = (String) comboBox.getSelectedItem();
+                if (selectedCar != null) {
+                    Vehicle newCar = factory.createVehicle(selectedCar);
+                    newCar.setY(0);
+
+                    // directly add to model's list
+                    getCars().add(newCar);
+                    this.model.notifyObservers();
+                }
+            }
+        }
     }
 
     /* Each step the TimerListener moves all the cars in the list and tells the

@@ -12,7 +12,10 @@ public abstract class Vehicle implements Movable {
     private double currentSpeed;    /** The current speed of the car */
     private Color color;    /** Color of the car */
     private String modelName;     /** The car model name */
-    private BufferedImage image;
+
+    private static int nextId = 0;
+    private int id = nextId++;
+    public int getId() { return id; }
 
     public double x = 0.0;    /** Represents the cars current position on the x-axis. */
     public double y = 0.0;    /** Represents the cars current position on the y-axis. */
@@ -22,18 +25,13 @@ public abstract class Vehicle implements Movable {
 
     public abstract boolean isLoadable();
 
-    public Vehicle(int nrDoors, double enginePower, Color color, String modelName, String imagePath) {
+    public Vehicle(int nrDoors, double enginePower, Color color, String modelName) {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
 
-        try {
-            this.image = ImageIO.read(Vehicle.class.getResourceAsStream(imagePath));
-        } catch (IOException ex)
-        {
-            ex.printStackTrace();
-        }
+
     }
 
     /**
@@ -87,10 +85,6 @@ public abstract class Vehicle implements Movable {
     private Color getColor(){
         return color;
     }
-
-    public BufferedImage getImage() {
-        return image;
-    };
 
     public String getModelName() {return modelName;}
 
